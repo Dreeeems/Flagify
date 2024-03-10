@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #151515;
+}
+
+.infos {
+  transition: 1s;
+}
+
+.infosHidden {
+  transition: 1s;
+}
