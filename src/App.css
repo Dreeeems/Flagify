@@ -1,6 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
+body {
   background-color: #151515;
+}
+
+div.opening {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: slide-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.image-container {
+  flex: 0 0 auto;
+}
+
+.responsive-image {
+  max-width: 75%;
+  max-height: 75%;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(+0px);
+    transform: translateY(0px);
+  }
 }
