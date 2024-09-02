@@ -1,14 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  background-color: #151515;
+  background-image: url("./assets/imgs/bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
-.infos {
-  transition: 1s;
-}
-
-.infosHidden {
-  transition: 1s;
+main {
+  flex: 1;
 }
