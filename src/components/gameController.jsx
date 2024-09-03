@@ -1,11 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import { fetch } from "../utils/fetch";
 import CountryBtn from "./countryBtn";
+import { useDispatch } from "react-redux";
+import { questions } from "../utils/questions";
+import { setQuestion } from "../reducer/questionSlice";
+import { setCountries } from "../reducer/countrySlice";
 
 const GameController = () => {
+  const dispatch = useDispatch();
   const [displayedData, setDisplayedData] = useState([]);
   const [loading, setLoading] = useState(true);
   const randomCountryRef = useRef([]);
+
+  const getRandomQuestion = () => {
+    const questionID = Math.floor(Math.random() * questions.length);
+    return questions[questionID];
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,10 +40,14 @@ const GameController = () => {
       randomCountryRef.current = Array.from(uniqueEntries).map(
         (index) => displayedData[index]
       );
-      console.log(randomCountryRef.current);
+
+      // Sauvegarder la question aléatoire dans Redux
+      const randomQuestion = getRandomQuestion();
+      dispatch(setQuestion(randomQuestion));
+      dispatch(setCountries(randomCountryRef.current));
       setLoading(false);
     }
-  }, [displayedData]);
+  }, [displayedData, dispatch]);
 
   const getRandomInt = (min, max) => {
     min = Math.ceil(min);
