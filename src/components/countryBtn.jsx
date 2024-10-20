@@ -1,21 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 const CountryBtn = (props) => {
+  const countries = useSelector((state) => state.country);
+  const question = useSelector((state) => state.question);
   const { country } = props;
-  console.log(country);
+
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [correctCountry, setCorrectCountry] = useState(null);
+
+  const checkAnswer = (country) => {
+    let correct = countries[0]; // Supposons que le premier pays est le bon
+    // Logique pour déterminer le pays correct
+    switch (question.questionId) {
+      case 0:
+        for (let i = 0; i < countries.length; i++) {
+          if (correct.population < countries[i].population) {
+            correct = countries[i];
+          }
+        }
+        break;
+    }
+
+    setSelectedCountry(country);
+    setCorrectCountry(correct);
+    console.log(correct.name.common);
+  };
+
+  // Vérifie si la réponse est correcte
+  const isCorrect =
+    selectedCountry &&
+    selectedCountry.name.common === correctCountry?.name.common;
+  const isSelected =
+    selectedCountry && selectedCountry.name.common === country.name.common;
 
   return (
-    <div className="flex flex-col  pt-5 pl-5 pr-5 mt-5 ">
-      <div className="sm:w-44 sm:h-44 w-36 h-36 bg-bgborder rounded-full flex items-center justify-center ">
-        <div className="sm:w-40 sm:h-36 w-32 h-32 bg-gray-500 rounded-full flex items-center justify-center overflow-hidden">
-          <img
-            src={country.flags.png}
-            alt={`${country.name.common} flag`}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-      <div className="bg-btn text-white p-2  rounded-2xl text-center mt-5 font-bold pl-8 pr-8 mb-5 border-bgborder border-2">
+    <div
+      className="flex flex-col items-center mt-5 cursor-pointer"
+      onClick={() => checkAnswer(country)}
+    >
+      <div
+        className={`bg-btn text-white h-20  lg:w-96  sm:w-92 flex items-center justify-center rounded-xl text-center font-bold w-full transition duration-300 transform hover:scale-105 shadow-md ${
+          selectedCountry
+            ? isCorrect
+              ? "bg-green-500"
+              : isSelected
+              ? "bg-red-500"
+              : correctCountry.name.common == country.name.common
+              ? "bg-green-500"
+              : ""
+            : ""
+        }`}
+      >
         {country.name.common}
       </div>
     </div>

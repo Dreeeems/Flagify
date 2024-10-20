@@ -6,11 +6,13 @@ const questionSlice = createSlice({
   initialState: {
     question: "",
     questionId: "",
+    questionResult: "",
   },
   reducers: {
     setQuestion: (state, action) => {
       state.question = action.payload.question; // Assurez-vous que `text` est la bonne clé
       state.questionId = action.payload.questionId; // Assurez-vous que `country` est la bonne clé (si vous utilisez un pays)
+      state.result = action.payload.questionResult;
     },
   },
 });

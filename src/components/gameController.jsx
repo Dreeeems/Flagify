@@ -56,10 +56,10 @@ const GameController = () => {
   };
 
   return (
-    <div className="flex flex-col justify-end items-center bg-gradient-to-b from-bgr1 to-bgr2 rounded-tl-xl rounded-tr-xl p-4 md:p-8  absolute bottom-0 shadow-2xl">
+    <div className="flex flex-col justify-end items-center bg-gradient-to-b from-bgr1 to-bgr2 rounded-tl-xl rounded-tr-xl p-4 md:p-8 absolute bottom-0 shadow-2xl transition duration-300 transform hover:scale-105">
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         {loading ? (
-          <p>Loading...</p>
+          <p className="text-white">Loading...</p>
         ) : (
           randomCountryRef.current.map((country, index) => (
             <CountryBtn key={index} country={country} />
