@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import fetchCountries from "../utils/fetchFromApi";
-
+import HomeCountryCard from "../components/homeCountryCard";
 const Home = () => {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
@@ -48,6 +48,10 @@ const Home = () => {
       setFilteredCountries([]);
     }
   }, [searchTerm, countries]);
+
+  const removeCountry = (countryCode) =>{
+ setSelectedCountries(selectedCountries.filter((c) => c.cca3 !== countryCode));
+  }
   return (
     <div className="max-w-7xl mx-auto p-4 pt-8">
       <div className="text-center mb-12">
@@ -94,6 +98,41 @@ const Home = () => {
               </div>
             </button>
           ))}
+        </div>
+      )}
+      {selectedCountries.length > 0 && (
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-lg rounded-full px-6 py-3 border border-purple-500/30">
+            <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+            <p className="text-purple-200 font-medium">
+              {selectedCountries.length} of 4 countries selected
+            </p>
+          </div>
+        </div>
+      )}
+
+      {selectedCountries.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {selectedCountries.map((country) => (
+            <HomeCountryCard
+              key={country.cca3}
+              country={country}
+              onRemove={removeCountry}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-20">
+          <div className="relative inline-block mb-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-xl opacity-20 animate-pulse"></div>
+          </div>
+          <h3 className="text-3xl font-bold text-white mb-4">
+            Start Your Journey
+          </h3>
+          <p className="text-purple-300 text-lg max-w-md mx-auto">
+            Search and select up to 4 countries to compare their fascinating
+            statistics and data
+          </p>
         </div>
       )}
     </div>
