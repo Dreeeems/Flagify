@@ -25,7 +25,7 @@ const HomeCountryCard = ({ country, onRemove }) => {
   };
 
   return (
-    <div className="bg-white/10 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105 rounded-2xl overflow-hidden">
+    <div className="bg-white/10 backdrop-blur-xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300  rounded-2xl overflow-hidden">
       <div className="relative pb-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-6">
         <button
           onClick={() => onRemove(country.cca3)}
