@@ -10,14 +10,12 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   const addCountry = (country) => {
-    console.log(country);
     if (
       selectedCountries.length < 4 &&
       !selectedCountries.find((c) => c.cca3 === country.cca3)
     ) {
       setSelectedCountries([...selectedCountries, country]);
       setSearchTerm("");
-      console.log(selectedCountries);
     }
   };
   useEffect(() => {
@@ -49,9 +47,11 @@ const Home = () => {
     }
   }, [searchTerm, countries]);
 
-  const removeCountry = (countryCode) =>{
- setSelectedCountries(selectedCountries.filter((c) => c.cca3 !== countryCode));
-  }
+  const removeCountry = (countryCode) => {
+    setSelectedCountries(
+      selectedCountries.filter((c) => c.cca3 !== countryCode)
+    );
+  };
   return (
     <div className="max-w-7xl mx-auto p-4 pt-8">
       <div className="text-center mb-12">
