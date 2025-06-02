@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# 🌍 Flagify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Flagify is a simple and responsive web application that displays information about countries around the world. It leverages the [REST Countries API](https://restcountries.com/) to fetch real-time data and is built using modern web technologies.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📑 Table of Contents
 
-### `npm start`
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Live Version](#live-version)
+5. [License](#license)
+6. [Acknowledgements](#acknowledgements)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📌 General Info
 
-### `npm test`
+Flagify allows users to browse a list of countries and view detailed information such as:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- National flag
+- Capital
+- Region & Subregion
+- Population
+- Languages
+- Currencies
+- Timezones
 
-### `npm run build`
+It is designed to be fast, minimalistic, and responsive on all screen sizes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project was built with:
 
-### `npm run eject`
+- **React** – for building the user interface
+- **Tailwind CSS** – for styling and layout
+- **REST Countries API** – to fetch country data
+- **Vercel** – for deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💻 Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To run this project locally, follow these steps:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the repository**
 
-## Learn More
+   ```bash
+   git clone https://github.com/Dreeeems/Flagify.git
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Navigate to the project directory**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   cd Flagify
+   ```
 
-### Code Splitting
+3. **Install dependencies**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+4. **Start the development server**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm run dev
+   ```
 
-### Making a Progressive Web App
+5. **Visit the app**
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🌐 Live Version
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Check out the live application here:  
+👉 [https://flagify-one.vercel.app](https://flagify-one.vercel.app)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
+This project is licensed under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🙏 Acknowledgements
+
+- [REST Countries API](https://restcountries.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React](https://reactjs.org/)
+- [Vercel](https://vercel.com/)
